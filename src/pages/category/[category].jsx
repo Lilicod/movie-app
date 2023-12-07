@@ -1,5 +1,5 @@
+import MovieCard from "@/components/cards/MovieCard"
 import fetcher from "@/util/api"
-import MovieCard from "@/components/MovieCard/MovieCard"
 import Link from "next/link"
 
 export default function Category({ movieCategory, category }) {

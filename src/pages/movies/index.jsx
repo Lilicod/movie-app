@@ -1,7 +1,7 @@
-import MovieCard from "@/components/cards/movieCard"
 import Link from "next/link"
 import React from "react"
 import fetcher from "@/util/api"
+import MovieCard from "@/components/cards/MovieCard"
 
 export default function Movies({ nowPlaying, popular, topRated, upcoming }) {
   return (
