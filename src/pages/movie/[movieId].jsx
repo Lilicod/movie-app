@@ -184,6 +184,7 @@ export default function SingleMovie({ movieDetails }) {
             {productionCompanies.map((company) => (
 
                 <img
+                key={company.id}
                   src={`https://image.tmdb.org/t/p/w500${company.logo_path}`}
                   alt="company"
                   className="w-[40px] lg:w-[60px]"
@@ -201,7 +202,7 @@ export default function SingleMovie({ movieDetails }) {
       <div className="px-6 lg:px-40 text-white space-y-8"> 
         <h2 className="text-2xl lg:text-4xl uppercase font-bold">Cast</h2>
         <div className="flex flex-row gap-x-4"> 
-          {actors.map((actor) =>  <div className="flex flex-col items-center"><img
+          {actors.map((actor) =>  <div key={actor.id} className="flex flex-col items-center"><img
             src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
             alt="actor"
             className="w-[150px] rounded-xl" /><p className="hidden lg:block">{actor.name}</p></div>
