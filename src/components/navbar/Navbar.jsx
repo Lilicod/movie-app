@@ -17,12 +17,12 @@ export default function Navbar() {
                     
                 <li className='hover:text-pink'>Home</li>
                 </Link>
-                <Link href="/">
+                {/* <Link href="/">
                     
                 <li className='hover:text-pink'>Tv Show</li>
-                </Link>
+                </Link> */}
                 <Link href="/movies">
-                <li className='hover:text-pink'>Movies</li>
+                <li className='hover:text-pink'>All Movies</li>
                     
                 </Link>
             </ul>

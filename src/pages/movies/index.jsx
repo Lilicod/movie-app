@@ -4,10 +4,24 @@ import fetcher from "@/util/api"
 import MovieCard from "@/components/cards/MovieCard"
 
 export default function Movies({ nowPlaying, popular, topRated, upcoming }) {
+  const options = ["Top Rated", "Popular", "Now Playing", "Upcoming"]
   return (
-    <div>
-      <h1 className="text-3xl">nowPlaying</h1>
-      <div className="gap-8 grid grid-cols-2 sm:grid-cols-7">
+    <div className="container mx-auto p-4 text-white font-bold">
+      <ul className="flex justify-center space-x-4">
+  {options.map((option) => (
+    <li
+      key={option}
+      className="flex flex-row mt-10 ml-10 hover:text-purple text-gray-400 active text-base"
+    >
+      <Link href={`/category/${option.toLowerCase().replace(/\s+/g, "_")}`}>
+        {option}
+      </Link>
+    </li>
+  ))}
+ 
+</ul>
+      <h1 className="text-3xl m-10">Now Playing</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-0 lg:m-20">
         {nowPlaying.results.map((movie) => (
           <>
             <Link href={`/movie/${movie.id}`}>
@@ -16,39 +30,39 @@ export default function Movies({ nowPlaying, popular, topRated, upcoming }) {
           </>
         ))}
       </div>
-{/* 
-      <h1 className="text-2xl">popular</h1>
-      <div className="gap-8 grid grid-cols-2 sm:grid-cols-6">
+
+      <h1 className="text-3xl m-10">Popular</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-0 lg:m-20">
         {popular.results.map((movie) => (
           <>
-            <Link href={`./${movie.id}`}>
+             <Link href={`/movie/${movie.id}`}>
               <MovieCard {...movie} />
             </Link>
           </>
         ))}
       </div>
 
-      <h1 className="text-2xl">topRated</h1>
-      <div className="gap-8 grid grid-cols-2 sm:grid-cols-6">
+      <h1 className="text-3xl m-10">Top Rated</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-0 lg:m-20">
         {topRated.results.map((movie) => (
           <>
-            <Link href={`/movies/${movie.id}`}>
+              <Link href={`/movie/${movie.id}`}>
               <MovieCard {...movie} />
             </Link>
           </>
         ))}
       </div>
 
-      <h1 className="text-2xl">upcoming</h1>
-      <div className="gap-8 grid grid-cols-2 sm:grid-cols-6">
+      <h1 className="text-3xl m-10">Upcoming</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-6 gap-4 m-0 lg:m-20">
         {upcoming.results.map((movie) => (
           <>
-            <Link href={`./${movie.id}`}>
+            <Link href={`/movie/${movie.id}`}>
               <MovieCard {...movie} />
             </Link>
           </>
         ))}
-      </div> */}
+      </div>
     </div>
   )
 }

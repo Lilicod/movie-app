@@ -82,7 +82,7 @@ export default function SingleMovie({ movieDetails }) {
     fetchTrailer();
   }, [movieId]);
 
-  const genre = genres.slice(0, 1).shift();
+  // const genre = genres.slice(0, 1).shift();
 
   const settings = {
     dots: false,
@@ -140,10 +140,14 @@ export default function SingleMovie({ movieDetails }) {
             </Link>
           </div>
           <h2 className="text-xl lg:text-6xl font-bold"> {movieDetails.title}</h2>
-          <div className="flex flex-row gap-4 ">
+          <div className="flex flex-wrap gap-4 ">
+          {genres.map((genre) => (
+             <button key={genre.id} className="shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 bg-blue rounded-lg py-1 px-1 md:py-2 md:px-4">{genre.name} </button> 
+
+          ))}
             {/* <button className="shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 bg-blue rounded-lg py-2 px-4">{genre.name} </button> */}
             <button className="shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 bg-purple rounded-lg py-2 px-4">
-              {movieDetails.runtime}
+              {movieDetails.runtime} min
             </button>
             <button className="shadow-lg transform transition-all duration-500 ease-in-out hover:scale-110 hover:brightness-110 flex items-center justify-center gap-2 bg-pink rounded-lg py-2 px-4">
               {movieDetails.vote_average}
@@ -165,7 +169,7 @@ export default function SingleMovie({ movieDetails }) {
         <div className="text-sm lg:text-lg flex flex-col gap-y-8 lg:gap-y-8 items-center pt-6 px-10 lg:pt-6 lg:px-16">
 
           <div className="flex flex-row gap-x-12 lg:gap-x-32 text-white">
-        <p className="flex flex-col items-center">Director name <span className="text-gray-400">name</span></p>
+        {/* <p className="flex flex-col items-center">Director name <span className="text-gray-400">name</span></p> */}
           <p className="flex flex-col items-center">Release date <span className="text-gray-400">{movieDetails.release_date}</span>  </p>
           <p className="flex flex-col items-center"> Languages <span className="text-gray-400">{movieDetails.original_language} </span></p>
           </div>
@@ -173,7 +177,6 @@ export default function SingleMovie({ movieDetails }) {
           <div className="bg-darkBlue text-gray-300 rounded-xl p-6">
             <p>Overview of the movie : {movieDetails.overview} </p>
           </div>
-
           <div>
           <p className="text-white">
             Production Companies :{" "}
