@@ -25,13 +25,6 @@ export default function SearchBar() {
 
     </form>
     <div>           
-    {/* <div className='relative'>
-<FiSearch className='absolute mt-[1px] shadow-pink font-bold shadow-md p-2 text-white text-4xl bg-pink rounded-full'/>
-<input 
-
-type="text" 
-className="pl-10 text-white focus:outline-none relative py-2 px-2 block w-40 bg-transparent border border-gray-500 rounded-full text-sm focus:border focus:border-pink disabled:opacity-50 disabled:pointer-events-none " placeholder="Search..."/>
-    </div> */}
 </div>
 </div>
   )

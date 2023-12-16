@@ -169,7 +169,6 @@ export default function SingleMovie({ movieDetails }) {
         <div className="text-sm lg:text-lg flex flex-col gap-y-8 lg:gap-y-8 items-center pt-6 px-10 lg:pt-6 lg:px-16">
 
           <div className="flex flex-row gap-x-12 lg:gap-x-32 text-white">
-        {/* <p className="flex flex-col items-center">Director name <span className="text-gray-400">name</span></p> */}
           <p className="flex flex-col items-center">Release date <span className="text-gray-400">{movieDetails.release_date}</span>  </p>
           <p className="flex flex-col items-center"> Languages <span className="text-gray-400">{movieDetails.original_language} </span></p>
           </div>
@@ -183,17 +182,6 @@ export default function SingleMovie({ movieDetails }) {
             <span className="text-gray-300">
 
             {productionCompanies.map((company) => company.name).join(", ")}
-            <div className="flex flex-wrap gap-x-8 justify-cneter items-center p-8">
-            {productionCompanies.map((company) => (
-
-                <img
-                key={company.id}
-                  src={`https://image.tmdb.org/t/p/w500${company.logo_path}`}
-                  alt="company"
-                  className="w-[40px] lg:w-[60px]"
-                />
-                ))}
-                </div>
             </span>
           </p>
           </div>

@@ -106,14 +106,6 @@ const movieId = latest.results.id
                    <p>Details</p>  <FaArrowRightLong />
                     </button>
                     </Link>
-                {/* <p>
-          Trailer: <a href={trailer}>Watch Trailer</a>
-        </p>
-                        <p>Genres: {genres.map((genre) => genre.name).join(", ")}</p>
-        <p>
-            Production Companies:{" "}
-            {productionCompanies.map((company) => company.name).join(", ")}
-          </p> */}
         
                             </div>
                            
@@ -132,7 +124,6 @@ const movieId = latest.results.id
         </div>
     <Slider
           {...settings2}
-          // className='p-1 m-1 md:p-5 md:m-5 lg:m-16 lg:p-5'
           className='mx-8 my-8 '
       >
           {latest.results.map((movie) => (
