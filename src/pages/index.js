@@ -17,8 +17,6 @@ export default function Home({ latest, nowPlaying, popular, topRated, upcoming }
         <LatestMovies latest={latest} />
         <TopRated topRated={topRated} />
         <Popular popular={popular}/>
-     
-            
     </main>
   )
 }

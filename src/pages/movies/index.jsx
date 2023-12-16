@@ -7,11 +7,11 @@ export default function Movies({ nowPlaying, popular, topRated, upcoming }) {
   const options = ["Top Rated", "Popular", "Now Playing", "Upcoming"]
   return (
     <div className="container mx-auto p-4 text-white font-bold">
-      <ul className="flex justify-center space-x-4">
+      <ul className="flex justify-center space-x-4 md:space-x-8">
   {options.map((option) => (
     <li
       key={option}
-      className="flex flex-row mt-10 ml-10 hover:text-purple text-gray-400 active text-base"
+      className="flex flex-row mt-10 md:ml-10 hover:text-purple border-b hover:border-none text-gray-400 active md:text-md lg:text-lg text-sm"
     >
       <Link href={`/category/${option.toLowerCase().replace(/\s+/g, "_")}`}>
         {option}
